@@ -1,4 +1,3 @@
-// import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +7,7 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:random_video_call_app/constants/pages.dart';
 import 'package:random_video_call_app/constants/routes.dart';
 import 'package:random_video_call_app/screens/splash/splash.dart';
-import 'package:random_video_call_app/utils/ad_manager.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:random_video_call_app/utils/app_life_cycle.dart';
 import 'package:random_video_call_app/utils/utils.dart';
 import 'utils/preferences/preference_manager.dart';
@@ -20,24 +19,18 @@ bool isInitialized = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+
+  await AppPreference().initialAppPreference();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
 
-  OneSignal.shared.setAppId("bfef5e5c-704b-48af-968a-295b9ecd1534");
+  OneSignal.shared.setAppId("a5155fd7-7503-4cae-9ba5-81820e7dc29c");
 
-  OneSignal.shared
-      .promptUserForPushNotificationPermission()
-      .then((accepted) {});
-  await AppPreference().initialAppPreference();
-  // bool? isInit = await AppLovinMAX.isInitialized();
-  // if (isInit == false) {
-  //   Map? sdkConfiguration = await AppLovinMAX.initialize(
-  //       "Q_cr6fliNUamttEd0C3551xaSq3EpCax_LNncR_-50RbWkKThWsJtG37u2gAfu6TUOdBoXhqMQ9_xxMR4JBUcO");
-  //   if (sdkConfiguration != null) {
-  //     isInitialized = true;
-  //     AppPreference().setBool("sdk", true);
-  //   }
-  // }
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+    print("Accepted permission: $accepted");
+  });
+
   runApp(const MyApp());
 }
 

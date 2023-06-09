@@ -58,7 +58,7 @@ class CustomDrawer extends StatelessWidget {
                   text: 'Share App',
                   onTap: () {
                     Share.share(
-                        "Download this All Hd Movies: All In One App on Play Store $appUrl");
+                        "Download this Random Video Call: Live Chat on Play Store $appUrl");
                   }),
               draweTile(
                   icon: Icons.star,

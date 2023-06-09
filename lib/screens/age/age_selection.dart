@@ -60,7 +60,7 @@ class _AgeSelectionState extends State<AgeSelection> {
                       onTap: () {
                         if (countrySelectCnt.age == -1) {
                           Get.rawSnackbar(
-                              message: "Please Select your age",
+                              message: "Please select your age group",
                               backgroundColor: Colors.red,
                               snackPosition: SnackPosition.BOTTOM,
                               borderRadius: 99.r,

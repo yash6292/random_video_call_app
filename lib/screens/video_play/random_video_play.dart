@@ -33,7 +33,6 @@ class _RandomVideoPlayPageState extends State<RandomVideoPlayPage> {
   void initState() {
     Get.delete<AdManager>();
     startCamera(cnt.direction.value);
-    print('widget.isArg ${widget.isArg}');
     List<VideoData> data = widget.isArg ? Get.arguments : widget.data ?? [];
     data.shuffle();
     cnt.controller = VideoPlayerController.network('${data.first.video}')
@@ -66,7 +65,7 @@ class _RandomVideoPlayPageState extends State<RandomVideoPlayPage> {
       if (!mounted) {
         return;
       }
-      setState(() {}); //To refresh widget
+      setState(() {});
     }).catchError((e) {
       print(e);
     });

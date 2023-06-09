@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:random_video_call_app/screens/video_play/video_cnt.dart';
 import 'package:random_video_call_app/screens/video_play/random_video_play.dart';
 import 'package:random_video_call_app/utils/ad_manager.dart';
@@ -23,6 +24,18 @@ class _ConnectFriendsScreenState extends State<ConnectFriendsScreen> {
   AdManager adManager = Get.put(AdManager());
 
   @override
+  void initState() {
+    // TODO: implement initState
+    cameraPer();
+    super.initState();
+  }
+
+  cameraPer() async {
+    await Permission.camera.isDenied
+        .then((value) => Permission.camera.request());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
@@ -42,7 +55,7 @@ class _ConnectFriendsScreenState extends State<ConnectFriendsScreen> {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             leading: InkWell(
               child: const Icon(Icons.keyboard_backspace_rounded,
-                  color: ColorUtil.blackColor,size: 30),
+                  color: ColorUtil.blackColor, size: 30),
               onTap: () {
                 if (adsData.isInterShow11 ?? false) {
                   adManager.loadGoogleInterAd(
