@@ -1,0 +1,42 @@
+{
+  "status_code": 200,
+  "count": 253,
+  "data": [
+    {
+      "user_image": "https://s1.dmcdn.net/v/Msr9G1QG_-NqVOAof/x1080",
+      "user_name": "Mririan",
+      "video": "https://anand1280.github.io/Fake-Vieo-Zip/fake_4.mp4",
+      "isNative": false
+    },
+    {
+      "user_image": "https://s1.dmcdn.net/v/JUmdz1Wtl8KaJoscP/x720",
+      "user_name": "Grace",
+      "video": "https://anand1280.github.io/Fake-Vieo-Zip/fake_5.mp4",
+      "isNative": false
+    },
+    {
+      "user_image": "https://s2.dmcdn.net/v/JmHQj1OxXkzoOlqOr/x480",
+      "user_name": "Emma",
+      "video": "https://anand1280.github.io/Fake-Vieo-Zip/fake_6.mp4",
+      "isNative": false
+    },
+    {
+      "user_image": "https://s1.dmcdn.net/v/Msr9w1QG_-gDljZJv/x1080",
+      "user_name": "Olivia",
+      "video": "https://anand1280.github.io/Fake-Vieo-Zip/fake_3.mp4",
+      "isNative": false
+    },
+    {
+      "user_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Rnbtai4W8l3h2oc3oYHg6CCa4OED2U8HKK9DQzLT47ax4oQx4yPzQ2xxJPZY6RnAPQI&usqp=CAU",
+      "user_name": "Minah",
+      "video": "https://anand1280.github.io/Fake-Vieo-Zip/fake_2.mp4",
+      "isNative": false
+    },
+    {
+      "user_image": "https://s2.dmcdn.net/v/Msr8T1QH08lujyMSq/x1080",
+      "user_name": "Jess",
+      "video": "https://anand1280.github.io/Fake-Vieo-Zip/fake_1.mp4",
+      "isNative": false
+    }
+  ]
+}
